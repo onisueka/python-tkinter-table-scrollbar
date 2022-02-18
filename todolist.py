@@ -52,7 +52,7 @@ table.set_header((
 ))
 
 todo = todolistService('todolist/todo.db')
-todo.generate_row(100) # auto generate row
+# todo.generate_row(100) # auto generate row
 data_list = todo.get_todo()
 todo.conn.close() # close connection with this database.
 for item in data_list:
@@ -63,8 +63,5 @@ for item in data_list:
         else:
             body_array.append({ 'text': text, 'type': 'text' })
     table.set_body(body_array)
-
-def binding_event():
-    print("TYEREREWSADF")
 
 root.mainloop()
