@@ -55,7 +55,7 @@ class tableService(object):
                 row.set(item['text']) # initial value
                 module_selectbox_name = 'column' + str(index)
                 command = lambda _item: self.data.binding_event({ 'module': module_selectbox_name, 'id': bodies[0]['text'], 'value': _item })
-                optionmenu = tk.OptionMenu(frame, row, "pending", "complete", command=command)
+                optionmenu = tk.OptionMenu(frame, row, *item['data'], command=command)
                 optionmenu.config(borderwidth=2, relief="groove", padx=8, pady=4, background=self.body_bg, foreground=self.body_color, width = self.column_width[index] - 3)
                 optionmenu.pack(side = tk.LEFT)
             else:

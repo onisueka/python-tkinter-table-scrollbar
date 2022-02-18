@@ -59,7 +59,7 @@ for item in data_list:
     body_array = [{ 'text': item[0], 'type': 'checkbox'}]
     for index, text in enumerate(item):
         if(index == 2): # status field
-            body_array.append({ 'text': text, 'type': 'selectbox' })
+            body_array.append({ 'text': text, 'type': 'selectbox', 'data': ('pending', 'complete') })
         else:
             body_array.append({ 'text': text, 'type': 'text' })
     table.set_body(body_array)
