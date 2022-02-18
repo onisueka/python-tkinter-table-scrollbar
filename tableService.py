@@ -47,13 +47,13 @@ class tableService(object):
         for index, item in enumerate(bodies):
             if(item['type'] == 'checkbox'):
                 row = tk.IntVar()
-                module_checkbox_name = 'checkbox' + str(index)
+                module_checkbox_name = 'column' + str(index)
                 command = lambda _item = row: self.data.binding_event({ 'module': module_checkbox_name, 'id': bodies[0]['text'], 'value': _item.get() })
                 tk.Checkbutton(frame, text='', borderwidth=2, relief="groove", padx=12, pady=5, variable=row, onvalue=1, offvalue=0, background=self.body_bg, foreground=self.body_color, width=self.column_width[index] - 3, command=command).pack(side = tk.LEFT)
             elif(item['type'] == 'selectbox'):
                 row = tk.StringVar(frame)
                 row.set(item['text']) # initial value
-                module_selectbox_name = 'selectbox' + str(index)
+                module_selectbox_name = 'column' + str(index)
                 command = lambda _item: self.data.binding_event({ 'module': module_selectbox_name, 'id': bodies[0]['text'], 'value': _item })
                 optionmenu = tk.OptionMenu(frame, row, "pending", "complete", command=command)
                 optionmenu.config(borderwidth=2, relief="groove", padx=8, pady=4, background=self.body_bg, foreground=self.body_color, width = self.column_width[index] - 3)

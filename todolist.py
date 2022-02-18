@@ -8,9 +8,9 @@ class bindEvent:
 
     def binding_event(self, item):
         match item['module']:
-            case 'checkbox0':
+            case 'column0':
                 self.__ids.append(item['id']) if item['value'] == 1 else self.__ids.remove(item['id'])
-            case 'selectbox3':
+            case 'column3':
                 display_status.set('Status: [module] -> ' + item['module'] + ', [id] -> ' + str(item['id']) + ', [value] -> ' + item['value'])
 
     def get_ids(self):
